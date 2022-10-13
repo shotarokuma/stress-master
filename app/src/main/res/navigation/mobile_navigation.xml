@@ -3,23 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_stressMeter">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.shotaro_kumagai_stress_master.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_stressMeter"
+        android:name="com.example.shotaro_kumagai_stress_master.ui.stressMeter.StressMeterFragment"
+        android:label="@string/stressMeter"
+        tools:layout="@layout/fragment_stress_meter" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.shotaro_kumagai_stress_master.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.shotaro_kumagai_stress_master.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_results"
+        android:name="com.example.shotaro_kumagai_stress_master.ui.results.SlideshowFragment"
+        android:label="@string/results"
+        tools:layout="@layout/fragment_results" />
 </navigation>
