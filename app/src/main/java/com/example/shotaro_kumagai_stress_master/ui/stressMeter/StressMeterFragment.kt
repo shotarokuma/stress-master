@@ -1,15 +1,18 @@
 package com.example.shotaro_kumagai_stress_master.ui.stressMeter
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.Button
 import android.widget.GridView
 import androidx.fragment.app.Fragment
 import com.example.shotaro_kumagai_stress_master.R
 
 class StressMeterFragment : Fragment() {
+    private lateinit var intent: Intent
     private lateinit var stressView: View
     private lateinit var myAdapter: StressAdapter
     private lateinit var stressGrid: GridView
@@ -23,7 +26,11 @@ class StressMeterFragment : Fragment() {
     ): View {
         stressView = inflater.inflate(R.layout.fragment_stress_meter,container, false)
         stressGrid = stressView.findViewById<GridView>(R.id.stress_grid)
-
+        stressGrid.onItemClickListener = AdapterView.OnItemClickListener{_,_,position,_ ->
+            intent = Intent(context, SelectImage::class.java)
+            intent.putExtra(SelectImage.SELECTED_IMAGE,images[position])
+            startActivity(intent)
+        }
         images = IMAGES.asSequence().shuffled().take(16).toList().toTypedArray()
         myAdapter = StressAdapter(stressView.context, images,16)
         stressGrid.adapter = myAdapter
