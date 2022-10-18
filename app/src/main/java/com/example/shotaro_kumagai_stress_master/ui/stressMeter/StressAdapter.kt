@@ -1,6 +1,7 @@
 package com.example.shotaro_kumagai_stress_master.ui.stressMeter
 
 import android.content.Context
+import android.database.DataSetObserver
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,7 @@ class StressAdapter(
     override fun getItemId(p0: Int): Long {
         return 0
     }
+
     override fun getView(
         position: Int,
         target: View?,
