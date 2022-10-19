@@ -1,3 +1,5 @@
+.DS_Store
+
 # Built application files
 *.apk
 *.aar
@@ -29,6 +31,7 @@ proguard/
 
 # Log Files
 *.log
+
 
 # Android Studio Navigation editor temp files
 .navigation/
@@ -82,4 +85,4 @@ lint/intermediates/
 lint/generated/
 lint/outputs/
 lint/tmp/
-# lint/reports/
+# lint/reports/e
