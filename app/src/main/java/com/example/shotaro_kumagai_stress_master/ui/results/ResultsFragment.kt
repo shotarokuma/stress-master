@@ -59,18 +59,17 @@ class ResultFragment : Fragment() {
         stringReader = StringReader(stringWriter.toString())
         csvIterator = CSVIterator(CSVReader(stringReader))
         value = arrayListOf()
-        var ind : Int = 1
+        var i : Int = 1
         value += PointValue(0F, 0F)
-
         for(row in csvIterator){
-            value += PointValue(ind.toFloat(),row[1].toFloat())
+            value += PointValue(i.toFloat(),row[1].toFloat())
             target = inflater.inflate(R.layout.table_row, null)
             stress = target.findViewById(R.id.stress)
             date  = target.findViewById(R.id.time)
             stress.text = row[1]
             date.text = row[0]
             table.addView(target)
-            ind += 1
+            i++
         }
         axisBottom = arrayListOf()
         axisLeft = arrayListOf()
@@ -107,7 +106,7 @@ class ResultFragment : Fragment() {
 
     companion object{
         val STRESS: Array<Int> = arrayOf(0,2,4,6,8,10,12,14,16)
-        val LEVEL: Array<Int> = arrayOf(0,3,6,9,12,15)
+        val LEVEL: Array<Int> =  arrayOf(0,2,4,6,8,10,12,14,16)
     }
 
 }
