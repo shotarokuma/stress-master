@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import com.example.shotaro_kumagai_stress_master.GStringWriter
 import com.example.shotaro_kumagai_stress_master.R
 import com.opencsv.CSVWriter
 import java.io.StringWriter
@@ -12,10 +13,10 @@ import kotlin.system.exitProcess
 
 class SelectImage : AppCompatActivity() {
     private lateinit var selectedImage: ImageView
-    private lateinit var stringWriter: StringWriter
     private lateinit var  csvWrite:CSVWriter
     private lateinit var  time : Number
     private lateinit var  stress: Number
+    private lateinit var stringWriter: StringWriter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,8 @@ class SelectImage : AppCompatActivity() {
     }
 
     fun onSubmit(view:View){
-        stringWriter = StringWriter()
+        val gStringWriter: GStringWriter =  GStringWriter.getInstance()
+        stringWriter = gStringWriter.stringWriter
         csvWrite = CSVWriter(stringWriter)
         time = System.currentTimeMillis()/1000
         stress = intent.getIntExtra(SELECTED_STRESS, 65535)
@@ -38,7 +40,7 @@ class SelectImage : AppCompatActivity() {
         val sharedPref = getSharedPreferences(PREF ,Context.MODE_PRIVATE)
         sharedPref.edit().putBoolean(NOTIFICATION,true).apply()
         moveTaskToBack(true)
-        exitProcess(-1)
+        finishAndRemoveTask()
     }
 
     fun onCancel(view: View){

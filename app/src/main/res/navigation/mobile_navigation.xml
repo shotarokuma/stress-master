@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_results"
-        android:name="com.example.shotaro_kumagai_stress_master.ui.results.SlideshowFragment"
+        android:name="com.example.shotaro_kumagai_stress_master.ui.results.ResultFragment"
         android:label="@string/results"
         tools:layout="@layout/fragment_results" />
 </navigation>

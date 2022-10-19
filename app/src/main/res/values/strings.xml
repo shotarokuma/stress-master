@@ -14,4 +14,5 @@
     <string name="more_image">More images</string>
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
+    <string name="graph_explanation">A graph showing your Stress Levels</string>
 </resources>
