@@ -29,6 +29,7 @@ class StressMeterFragment : Fragment() {
         stressGrid.onItemClickListener = AdapterView.OnItemClickListener{_,_,position,_ ->
             intent = Intent(context, SelectImage::class.java)
             intent.putExtra(SelectImage.SELECTED_IMAGE,images[position])
+            intent.putExtra(SelectImage.SELECTED_STRESS, SCORE[IMAGES.indexOf(images[position])])
             startActivity(intent)
         }
         images = IMAGES.asSequence().shuffled().take(16).toList().toTypedArray()
