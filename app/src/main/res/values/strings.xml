@@ -15,4 +15,7 @@
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
     <string name="graph_explanation">A graph showing your Stress Levels</string>
+    <string name="summary">Summary of Results</string>
+    <string name="time">Time</string>
+    <string name="stress">Stress</string>
 </resources>
